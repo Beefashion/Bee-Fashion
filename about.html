@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Fashion Shop - About</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================= RESET ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0d0d0d;
+            color: #fff;
+        }
+
+        /* ================= SECTION ================= */
+        .about {
+            padding: 100px 8%;
+        }
+
+        /* ================= HEADER ================= */
+        .about-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .about-header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .about-header span {
+            color: #ff0080;
+        }
+
+        .about-header p {
+            color: #aaa;
+        }
+
+        /* ================= GRID ================= */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* ================= IMAGE ================= */
+        .about-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+        }
+
+        .about-img img {
+            width: 100%;
+            transition: .6s;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ================= TEXT ================= */
+        .about-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 span {
+            color: #ff0080;
+        }
+
+        .about-text p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* ================= FEATURES ================= */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .feature {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 12px;
+            transition: .3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            background: #ff0080;
+        }
+
+        /* ================= STATS ================= */
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            background: #ff0080;
+        }
+
+        .stat h3 {
+            font-size: 24px;
+        }
+
+        /* ================= TIMELINE ================= */
+        .timeline {
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: #ff0080;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-box {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        /* ================= BUTTON ================= */
+        .btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            background: #ff0080;
+            color: #fff;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 15px #ff0080;
+        }
+
+        /* ================= ANIMATION ================= */
+        .hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= MOBILE ================= */
+        @media(max-width:768px) {
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 30px;
+            }
+
+            .timeline-item.right {
+                left: 0;
+            }
+
+        }
+
+        /* ================= MOBILE FIX ================= */
+        @media(max-width:768px) {
+
+            /* SECTION */
+            .about {
+                padding: 70px 5%;
+            }
+
+            /* HEADER */
+            .about-header h1 {
+                font-size: 28px;
+            }
+
+            .about-header p {
+                font-size: 14px;
+            }
+
+            /* GRID */
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            /* IMAGE */
+            .about-img img {
+                height: 250px;
+                object-fit: cover;
+            }
+
+            /* TEXT */
+            .about-text {
+                text-align: center;
+            }
+
+            .about-text h2 {
+                font-size: 24px;
+            }
+
+            .about-text p {
+                font-size: 14px;
+            }
+
+            /* FEATURES */
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            /* STATS */
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .stat {
+                width: 100%;
+            }
+
+            /* BUTTON */
+            .btn {
+                width: 100%;
+            }
+
+            /* ================= TIMELINE FIX ================= */
+
+            .timeline {
+                margin-top: 50px;
+            }
+
+            /* vertical line left */
+            .timeline::before {
+                left: 15px;
+            }
+
+            /* all items full width */
+            .timeline-item {
+                width: 100%;
+                padding-left: 40px;
+                margin-bottom: 20px;
+            }
+
+            /* remove right shift */
+            .timeline-item.right {
+                left: 0;
+            }
+
+            /* remove right align */
+            .timeline-item.left {
+                text-align: left;
+            }
+
+            /* box full width */
+            .timeline-box {
+                width: 100%;
+            }
+
+            /* animation smooth */
+            .hidden {
+                transform: translateY(30px);
+            }
+
+        }
+
+        /* IMAGE FIX (DESKTOP + MOBILE PERFECT) */
+        .about-img {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            width: 100%;
+            height: 420px;
+            /* FIXED HEIGHT FOR DESKTOP */
+        }
+
+        /* IMAGE FIT */
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* IMPORTANT */
+            object-position: center;
+            transition: 0.6s ease;
+        }
+
+        /* HOVER ZOOM (SAFE) */
+        .about-img:hover img {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="about">
+
+        <div class="about-header">
+            <h1>About <span>Bee Fashion Shop</span></h1>
+            <p>Where Style Meets Confidence</p>
+        </div>
+
+        <div class="about-grid hidden">
+
+            <div class="about-img">
+                <img src="WhatsApp Image 2026-05-03 at 5.36.09 PM.jpeg">
+            </div>
+
+            <div class="about-text">
+                <h2>We Create <span>Fashion Identity</span></h2>
+
+                <p>
+                    Bee Fashion Shop is not just a clothing store, it’s a lifestyle brand
+                    designed for modern people who want to stand out with confidence.
+                </p>
+
+                <p>
+                    We bring the latest fashion trends, premium quality fabrics and
+                    affordable pricing to make luxury accessible for everyone.
+                </p>
+
+                <div class="features">
+                    <div class="feature">Premium Quality</div>
+                    <div class="feature">Latest Trends</div>
+                    <div class="feature">Affordable Price</div>
+
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <h3 id="c1">0</h3>
+                        <p>Customers</p>
+                    </div>
+                    <div class="stat">
+                        <h3 id="c2">0</h3>
+                        <p>Products</p>
+                    </div>
+                    <div class="stat">
+                        <h3 id="c3">0</h3>
+                        <p>Years</p>
+                    </div>
+                </div>
+
+                <button class="btn">Explore Collection</button>
+
+            </div>
+
+        </div>
+
+        <!-- TIMELINE -->
+        <div class="timeline">
+
+            <div class="timeline-item left hidden">
+                <div class="timeline-box">
+                    <h3>2020</h3>
+                    <p>Bee Fashion Shop started with a small dream.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right hidden">
+                <div class="timeline-box">
+                    <h3>2022</h3>
+                    <p>Expanded into premium collections.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left hidden">
+                <div class="timeline-box">
+                    <h3>2024</h3>
+                    <p>Reached thousands of happy customers.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        /* SCROLL ANIMATION */
+        const hiddenElements = document.querySelectorAll(".hidden");
+
+        window.addEventListener("scroll", () => {
+            hiddenElements.forEach(el => {
+                const pos = el.getBoundingClientRect().top;
+                if (pos < window.innerHeight - 100) {
+                    el.classList.add("show");
+                }
+            });
+        });
+
+        /* COUNTER */
+        function counter(id, target) {
+            let count = 0;
+            let step = target / 50;
+
+            let interval = setInterval(() => {
+                count += step;
+                if (count >= target) {
+                    count = target;
+                    clearInterval(interval);
+                }
+                document.getElementById(id).innerText = Math.floor(count) + "+";
+            }, 30);
+        }
+
+        setTimeout(() => {
+            counter("c1", 10000);
+            counter("c2", 500);
+            counter("c3", 5);
+        }, 500);
+
+    </script>
+
+</body>
+
+</html>
